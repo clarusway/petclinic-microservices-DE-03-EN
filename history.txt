@@ -1,0 +1,130 @@
+    1  bash
+    2  ls -la
+    3  git 
+    4  git status
+    5  git version
+    6  mkdir test
+    7  cd test
+    8  git init
+    9  cd 
+   10  ls -la
+   11  vi .gitconfig
+   12  bash
+   13  git version
+   14  docker -version
+   15  docker v ersion
+   16  docker --version
+   17  docker-compose --version
+   18  java -version
+   19  bash
+   20  pwd
+   21  git clone https://github.com/clarusway/petclinic-microservices-with-db.git
+   22  cd petclinic-microservices-with-db/
+   23  ls -la
+   24  rm -rf .git
+   25  ls -la
+   26  git init
+   27  git add .
+   28  git commit -m "first commit"
+   29  git branch -M main
+   30  git remote add origin https://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@github.com/clarusway/petclinic-microservices-DE-03-EN.git
+   31  git push origin main
+   32      git checkout main
+   33      git branch dev
+   34      git checkout dev
+   35      git push --set-upstream origin dev
+   36      git checkout main
+   37      git branch release
+   38      git checkout release
+   39      git push --set-upstream origin release
+   40  git checkout dev
+   41  git switch release
+   42  git checkout dev
+   43  ./mvnw clean test
+   44  ./mvnw clean package
+   45  ./mvnw clean install
+   46  GÄ°T STATUS
+   47  git status
+   48  cd petclinic-microservices-with-db/
+   49  git status
+   50   git config --global user.name "alpi1977"
+   51  git config --global user.email aozkan1977@gmail.com
+   52  touch a.txt
+   53  git add .
+   54  git commit -m "file added"
+   55  git push
+   56  rm a.txt
+   57  ls
+   58  git add .
+   59  git commit -m "file deleted"
+   60  git push
+   61  git branch
+   62  git --help
+   63  git help branch
+   64  git branch tet
+   65  git branch -d test
+   66  git branch -d tet
+   67  git branch 
+   68  git branch test
+   69  git branch 
+   70  git switch test
+   71  echo "this is a test file" > test.txt
+   72  ls
+   73  git add . 
+   74  git commit -m "test.txt added"
+   75  git push origin test
+   76  git commit -am "test.txt modified"
+   77  git push
+   78  git push origin test
+   79  history
+   80  git branch -d test
+   81  git branch -D test
+   82  git push -u origin test
+   83  git branch -d test
+   84  git branch -D test
+   85  git -help branch
+   86  git --help branch
+   87  git branch -D 
+   88  git branch -D test
+   89  git branch
+   90  git branch -D -r test
+   91  git --help branch
+   92  git branch -D -f test
+   93  git branch -d -f test
+   94  git checkout dev
+   95  git branch -D test
+   96  git branch
+   97  git push origin --delete test
+   98  git branch
+   99  cd petclinic-microservices-with-db/
+  100  ls -la
+  101  git checkout release
+  102  git checkout dev
+  103  ls -ll
+  104  git checkout dev
+  105  git branch feature/msp-4
+  106  git checkout feature/msp-4
+  107  git checkout dev
+  108  git branch test
+  109  git branch 
+  110  git checkout test
+  111  echo "thiÅs is a test file" > test.txt
+  112  ls
+  113  cat test.txt
+  114  git add .
+  115  git commit -m "file added"
+  116  git push origin  test
+  117  git commit -am "file is modified"
+  118  git push
+  119  git push origin test
+  120  git push -u  origin test
+  121  git commit -am "file is modified"
+  122  git push
+  123  git branch -D  test
+  124  git switch dev
+  125  git branch -D  test
+  126  git branch
+  127  git push origin --delete test
+  128  history
+  129  cat history > history.txt
+  130  history > history.txt
