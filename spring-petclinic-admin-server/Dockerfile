@@ -8,3 +8,5 @@ RUN chmod +x dockerize
 ADD ./target/*.jar /app.jar
 EXPOSE ${EXPOSED_PORT}
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
+#docker run --rm -v $(pwd):/app -w /app callahanclarus/selenium-py-chrome:latest python selenium-jobs/test_owners_all_headless.py
