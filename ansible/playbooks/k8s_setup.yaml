@@ -145,17 +145,3 @@
       
   - name: Deploy Nginx Ingress 
     shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/aws/deploy.yaml
-
-  - name: Deploy AWS CSI Driver
-    become: false
-    shell: kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable"
-
-  - name: copy the storage.yml file
-    become: yes
-    copy: 
-      src: ./storage.yml
-      dest: /home/ubuntu/
-
-  - name: create StorageClass object
-    become: false
-    shell: kubectl apply -f storage.yml
