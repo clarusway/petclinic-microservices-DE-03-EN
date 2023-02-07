@@ -37,7 +37,7 @@
       curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
       echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
       apt-get update -q && \
-      apt-get install -qy kubelet=1.23.5-00 kubectl=1.23.5-00 kubeadm=1.23.5-00 docker.io
+      apt-get install -y kubelet=1.25.0-00 kubeadm=1.25.0-00 kubectl=1.25.0-00
 
   - name: Add ubuntu to docker group
     user:
@@ -135,13 +135,13 @@
 
   # - name: Deploy the required cloud-controller-manager 
   #   shell: |
-  #     cd /home/ubuntu
-  #     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-  #     chmod 777 get_helm.sh
-  #     ./get_helm.sh
-  #     helm repo add aws-cloud-controller-manager https://kubernetes.github.io/cloud-provider-aws
-  #     helm repo update
-  #     helm upgrade --install aws-cloud-controller-manager aws-cloud-controller-manager/aws-cloud-controller-manager --set image.tag=v1.20.0-alpha.0
+      cd /home/ubuntu
+      curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+      chmod 777 get_helm.sh
+      ./get_helm.sh
+      helm repo add aws-cloud-controller-manager https://kubernetes.github.io/cloud-provider-aws
+      helm repo update
+      helm upgrade --install aws-cloud-controller-manager aws-cloud-controller-manager/aws-cloud-controller-manager --set image.tag=v1.23.0-alpha.0
       
   # - name: Deploy Nginx Ingress 
   #   shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/aws/deploy.yaml
