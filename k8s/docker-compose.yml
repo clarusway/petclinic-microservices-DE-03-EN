@@ -49,8 +49,6 @@ services:
       kompose.service.nodeport.port: "30001"
   tracing-server:
     image: openzipkin/zipkin
-    environment:
-    - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -Djava.security.egd=file:/dev/./urandom
     ports:
      - 9411:9411
   admin-server:
