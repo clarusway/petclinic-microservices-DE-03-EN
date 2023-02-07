@@ -133,15 +133,17 @@
       kubectl patch node {{ hostvars[groups['role_worker'][0]]['private_dns_name'] }} -p '{"spec":{"providerID":"aws:///us-east-1a/{{ hostvars[groups['role_worker'][0]]['instance_id'] }}" }}'
       kubectl patch node {{ hostvars[groups['role_worker'][1]]['private_dns_name'] }} -p '{"spec":{"providerID":"aws:///us-east-1a/{{ hostvars[groups['role_worker'][1]]['instance_id'] }}" }}'
 
-  - name: Deploy the required cloud-controller-manager 
-    shell: |
-      cd /home/ubuntu
-      curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-      chmod 777 get_helm.sh
-      ./get_helm.sh
-      helm repo add aws-cloud-controller-manager https://kubernetes.github.io/cloud-provider-aws
-      helm repo update
-      helm upgrade --install aws-cloud-controller-manager aws-cloud-controller-manager/aws-cloud-controller-manager --set image.tag=v1.20.0-alpha.0
+  # - name: Deploy the required cloud-controller-manager 
+  #   shell: |
+  #     cd /home/ubuntu
+  #     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  #     chmod 777 get_helm.sh
+  #     ./get_helm.sh
+  #     helm repo add aws-cloud-controller-manager https://kubernetes.github.io/cloud-provider-aws
+  #     helm repo update
+  #     helm upgrade --install aws-cloud-controller-manager aws-cloud-controller-manager/aws-cloud-controller-manager --set image.tag=v1.20.0-alpha.0
       
-  - name: Deploy Nginx Ingress 
-    shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/aws/deploy.yaml
+  # - name: Deploy Nginx Ingress 
+  #   shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/aws/deploy.yaml
+
+  #ssh -i "j-petclinic-ansible-test-dev.key" ubuntu@ec2-3-89-118-21.compute-1.amazonaws.com
